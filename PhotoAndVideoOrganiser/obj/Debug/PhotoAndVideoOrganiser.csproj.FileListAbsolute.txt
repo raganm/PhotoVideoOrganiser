@@ -1,0 +1,13 @@
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoAndVideoOrganiser.exe.config
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoAndVideoOrganiser.exe
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoAndVideoOrganiser.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.csprojResolveAssemblyReference.cache
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Properties.Resources.resources
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.csproj.GenerateResource.Cache
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.exe
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoOrganiser.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\ExifLib.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoOrganiser.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\ExifLib.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Form1.resources

@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoAndVideoOrganiser", "PhotoAndVideoOrganiser\PhotoAndVideoOrganiser.csproj", "{BA7C330A-1B60-407F-A23A-B76ABB7179C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoOrganiser", "PhotoOrganiser\PhotoOrganiser.csproj", "{EDEA503E-3E2F-4292-BAFD-7C39BDF08748}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotoOrganiser.Tests", "PhotoOrganiser.Tests\PhotoOrganiser.Tests.csproj", "{D8B88B4F-AEE2-4CA3-A3C2-9B2AE4AF5153}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{1371D7E4-63E7-465F-868C-3C77D3951B0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExifLib", "References\Exiflib\ExifLib.csproj", "{C878A95F-E695-42FC-A714-E47DF6515679}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExifLibTestApp", "References\ExifLibTestApp\ExifLibTestApp.csproj", "{286E1371-BFAA-4616-B796-600EE50964DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA7C330A-1B60-407F-A23A-B76ABB7179C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA7C330A-1B60-407F-A23A-B76ABB7179C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA7C330A-1B60-407F-A23A-B76ABB7179C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA7C330A-1B60-407F-A23A-B76ABB7179C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEA503E-3E2F-4292-BAFD-7C39BDF08748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEA503E-3E2F-4292-BAFD-7C39BDF08748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEA503E-3E2F-4292-BAFD-7C39BDF08748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEA503E-3E2F-4292-BAFD-7C39BDF08748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B88B4F-AEE2-4CA3-A3C2-9B2AE4AF5153}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B88B4F-AEE2-4CA3-A3C2-9B2AE4AF5153}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B88B4F-AEE2-4CA3-A3C2-9B2AE4AF5153}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B88B4F-AEE2-4CA3-A3C2-9B2AE4AF5153}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C878A95F-E695-42FC-A714-E47DF6515679}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C878A95F-E695-42FC-A714-E47DF6515679}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C878A95F-E695-42FC-A714-E47DF6515679}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C878A95F-E695-42FC-A714-E47DF6515679}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286E1371-BFAA-4616-B796-600EE50964DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286E1371-BFAA-4616-B796-600EE50964DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286E1371-BFAA-4616-B796-600EE50964DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286E1371-BFAA-4616-B796-600EE50964DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

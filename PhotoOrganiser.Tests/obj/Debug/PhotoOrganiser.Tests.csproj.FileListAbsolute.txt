@@ -1,0 +1,16 @@
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\PhotoOrganiser.Tests.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\PhotoOrganiser.Tests.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\nunit.framework.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\nunit.framework.xml
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\obj\Debug\PhotoOrganiser.Tests.csprojResolveAssemblyReference.cache
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\obj\Debug\PhotoOrganiser.Tests.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\obj\Debug\PhotoOrganiser.Tests.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\testPicture.jpg
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\PhotoOrganiser.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\PhotoOrganiser.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\ExifLib.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\ExifLib.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\testPicture2.jpg
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\testPicture3.jpg
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\RenameTest\aaa.jpg
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\RenameTest\bbb.jpg

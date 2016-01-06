@@ -1,0 +1,10 @@
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\bin\Debug\ExifLibTestApp.exe.config
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\bin\Debug\ExifLibTestApp.exe
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\bin\Debug\ExifLibTestApp.pdb
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\bin\Debug\ExifLib.dll
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\bin\Debug\ExifLib.pdb
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\obj\Debug\ExifLibTestApp.csprojResolveAssemblyReference.cache
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\obj\Debug\ExifLibTestApp.Form1.resources
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\obj\Debug\ExifLibTestApp.csproj.GenerateResource.Cache
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\obj\Debug\ExifLibTestApp.exe
+C:\dev\PhotoAndVideoOrganiser\References\ExifLibTestApp\obj\Debug\ExifLibTestApp.pdb

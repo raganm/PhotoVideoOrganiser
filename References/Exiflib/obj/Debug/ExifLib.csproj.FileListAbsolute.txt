@@ -1,0 +1,5 @@
+C:\dev\PhotoAndVideoOrganiser\References\Exiflib\bin\Debug\ExifLib.dll
+C:\dev\PhotoAndVideoOrganiser\References\Exiflib\bin\Debug\ExifLib.pdb
+C:\dev\PhotoAndVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.csprojResolveAssemblyReference.cache
+C:\dev\PhotoAndVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.dll
+C:\dev\PhotoAndVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.pdb

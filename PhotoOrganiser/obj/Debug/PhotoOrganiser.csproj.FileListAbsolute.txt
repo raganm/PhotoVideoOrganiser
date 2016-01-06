@@ -1,0 +1,7 @@
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\bin\Debug\PhotoOrganiser.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\bin\Debug\PhotoOrganiser.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\obj\Debug\PhotoOrganiser.csprojResolveAssemblyReference.cache
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\obj\Debug\PhotoOrganiser.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\obj\Debug\PhotoOrganiser.pdb
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\bin\Debug\ExifLib.dll
+C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser\bin\Debug\ExifLib.pdb
