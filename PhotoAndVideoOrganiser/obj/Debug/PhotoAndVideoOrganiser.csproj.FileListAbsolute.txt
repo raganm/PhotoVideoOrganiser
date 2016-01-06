@@ -11,3 +11,16 @@ C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\ExifLib.dll
 C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoOrganiser.pdb
 C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\ExifLib.pdb
 C:\dev\PhotoAndVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Form1.resources
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoAndVideoOrganiser.exe.config
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.exe
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.pdb
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoAndVideoOrganiser.exe
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoAndVideoOrganiser.pdb
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoOrganiser.dll
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\ExifLib.dll
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\PhotoOrganiser.pdb
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\ExifLib.pdb
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.csprojResolveAssemblyReference.cache
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Form1.resources
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Properties.Resources.resources
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.csproj.GenerateResource.Cache

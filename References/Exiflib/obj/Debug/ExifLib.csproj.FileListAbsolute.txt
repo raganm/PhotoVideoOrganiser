@@ -3,3 +3,8 @@ C:\dev\PhotoAndVideoOrganiser\References\Exiflib\bin\Debug\ExifLib.pdb
 C:\dev\PhotoAndVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.csprojResolveAssemblyReference.cache
 C:\dev\PhotoAndVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.dll
 C:\dev\PhotoAndVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.pdb
+C:\dev\PhotoVideoOrganiser\References\Exiflib\bin\Debug\ExifLib.dll
+C:\dev\PhotoVideoOrganiser\References\Exiflib\bin\Debug\ExifLib.pdb
+C:\dev\PhotoVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.csprojResolveAssemblyReference.cache
+C:\dev\PhotoVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.dll
+C:\dev\PhotoVideoOrganiser\References\Exiflib\obj\Debug\ExifLib.pdb
