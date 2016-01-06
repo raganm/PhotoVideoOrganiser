@@ -43,6 +43,7 @@
     <Compile Include="Analyser.cs" />
     <Compile Include="NameGenerator.cs" />
     <Compile Include="Organiser.cs" />
+    <Compile Include="PhotoAnalysis.cs" />
     <Compile Include="Renamer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

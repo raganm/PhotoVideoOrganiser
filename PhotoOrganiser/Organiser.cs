@@ -39,7 +39,7 @@ namespace PhotoOrganiser
 
             var files = new List<PhotoAnalysis>();
 
-            foreach (string file in fileEntries)
+            foreach (var file in fileEntries)
             {
                 string newName;
 
