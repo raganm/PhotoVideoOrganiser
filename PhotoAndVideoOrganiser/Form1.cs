@@ -46,6 +46,11 @@ namespace PhotoAndVideoOrganiser
                 OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, true);
             }
 
+            if (chkIncludeVideo.Checked)
+            {
+                OrganiseVideos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, true);
+            }
+
             btnAnalyse.Enabled = true;
 
         }
@@ -58,6 +63,11 @@ namespace PhotoAndVideoOrganiser
             if (chkIncludePhotos.Checked)
             {
                 OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, false);
+            }
+
+            if (chkIncludeVideo.Checked)
+            {
+                OrganiseVideos(txtSourceFolder.Text,chkOrganiseSubDirectories.Checked, false);
             }
 
             btnOrganise.Enabled = true;
@@ -75,6 +85,11 @@ namespace PhotoAndVideoOrganiser
             }
 
             dataGridView1.DataSource = results;
+        }
+
+        private void OrganiseVideos(string text, bool @checked, bool b)
+        {
+            //throw new NotImplementedException();
         }
 
         private void ClearResults()
