@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using PhotoOrganiser;
 
@@ -20,11 +14,7 @@ namespace PhotoAndVideoOrganiser
             //textBox1.Text = @"c:\photos\input";
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        public string Wibble { get; set; }
 
         private void btnChooseSourceFolder_Click(object sender, EventArgs e)
         {
@@ -48,36 +38,59 @@ namespace PhotoAndVideoOrganiser
 
         private void btnAnalyse_Click(object sender, EventArgs e)
         {
-            var organiser = new Organiser(txtOrganisedFolder.Text);
-            var results = new List<PhotoAnalysis>();
-            foreach (var photoExtension in GetPhotoExtensions())
+            ClearResults();
+            btnAnalyse.Enabled = false;
+
+            if (chkIncludePhotos.Checked)
             {
-                results.AddRange(organiser.OrganiseDirectory(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, true, photoExtension.Trim()));
+                OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, true);
             }
 
-            dataGridView1.DataSource = results;
-
+            btnAnalyse.Enabled = true;
 
         }
 
         private void btnOrganise_Click(object sender, EventArgs e)
         {
+            ClearResults();
+            btnOrganise.Enabled = false;
+
+            if (chkIncludePhotos.Checked)
+            {
+                OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, false);
+            }
+
+            btnOrganise.Enabled = true;
+        }
+
+        private void OrganisePhotos(string sourceFolder, bool organiseSubDirectories, bool analyseOnly)
+        {
             var organiser = new Organiser(txtOrganisedFolder.Text);
 
             var results = new List<PhotoAnalysis>();
+
             foreach (var photoExtension in GetPhotoExtensions())
             {
-                results.AddRange(organiser.OrganiseDirectory(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, false, photoExtension.Trim()));
+                results.AddRange(organiser.OrganiseDirectory(sourceFolder, organiseSubDirectories, analyseOnly, photoExtension.Trim()));
             }
+
             dataGridView1.DataSource = results;
+        }
+
+        private void ClearResults()
+        {
+            dataGridView1.DataSource = new List<PhotoAnalysis>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            chkIncludePhotos.Checked = true;
+            chkIncludeVideo.Checked = false;
+            txtVideoExtensions.Enabled = false;
             txtSourceFolder.Text = @"C:\photos\problems";
-            txtOrganisedFolder.Text = @"C:\photos\testOutput";
+            txtOrganisedFolder.Text = txtSourceFolder.Text + @"\output";
             txtPhotoExtensions.Text = "*.jpg,*.jpeg";
-
+            txtVideoExtensions.Text = "*.mp4, *.avi";
 
             folderBrowserDialog1.SelectedPath = @"C:\photos\test";
         }
@@ -87,6 +100,21 @@ namespace PhotoAndVideoOrganiser
             var extensions = txtPhotoExtensions.Text.Split(Convert.ToChar(",")).ToList();
 
             return extensions;
+        }
+
+        private void txtSourceFolder_TextChanged(object sender, EventArgs e)
+        {
+            txtOrganisedFolder.Text = txtSourceFolder.Text + @"\output";
+        }
+
+        private void chkIncludePhotos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPhotoExtensions.Enabled = chkIncludePhotos.Checked;
+        }
+
+        private void chkIncludeVideo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtVideoExtensions.Enabled = chkIncludeVideo.Checked;
         }
     }
 }

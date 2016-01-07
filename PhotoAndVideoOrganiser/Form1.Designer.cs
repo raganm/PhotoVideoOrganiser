@@ -43,6 +43,11 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPhotoExtensions = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtVideoExtensions = new System.Windows.Forms.TextBox();
+            this.chkDisplayCorrectFiles = new System.Windows.Forms.CheckBox();
+            this.chkIncludePhotos = new System.Windows.Forms.CheckBox();
+            this.chkIncludeVideo = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +78,7 @@
             this.txtSourceFolder.Name = "txtSourceFolder";
             this.txtSourceFolder.Size = new System.Drawing.Size(481, 20);
             this.txtSourceFolder.TabIndex = 4;
+            this.txtSourceFolder.TextChanged += new System.EventHandler(this.txtSourceFolder_TextChanged);
             // 
             // label1
             // 
@@ -111,10 +117,11 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkDisplayCorrectFiles);
             this.panel1.Controls.Add(this.chkOrganiseSubDirectories);
             this.panel1.Location = new System.Drawing.Point(123, 112);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 36);
+            this.panel1.Size = new System.Drawing.Size(649, 49);
             this.panel1.TabIndex = 9;
             // 
             // chkOrganiseSubDirectories
@@ -168,14 +175,64 @@
             // 
             this.txtPhotoExtensions.Location = new System.Drawing.Point(123, 75);
             this.txtPhotoExtensions.Name = "txtPhotoExtensions";
-            this.txtPhotoExtensions.Size = new System.Drawing.Size(481, 20);
+            this.txtPhotoExtensions.Size = new System.Drawing.Size(229, 20);
             this.txtPhotoExtensions.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(404, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(105, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Video Extensions :";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtVideoExtensions
+            // 
+            this.txtVideoExtensions.Location = new System.Drawing.Point(515, 75);
+            this.txtVideoExtensions.Name = "txtVideoExtensions";
+            this.txtVideoExtensions.Size = new System.Drawing.Size(229, 20);
+            this.txtVideoExtensions.TabIndex = 17;
+            // 
+            // chkDisplayCorrectFiles
+            // 
+            this.chkDisplayCorrectFiles.AutoSize = true;
+            this.chkDisplayCorrectFiles.Location = new System.Drawing.Point(3, 26);
+            this.chkDisplayCorrectFiles.Name = "chkDisplayCorrectFiles";
+            this.chkDisplayCorrectFiles.Size = new System.Drawing.Size(157, 17);
+            this.chkDisplayCorrectFiles.TabIndex = 1;
+            this.chkDisplayCorrectFiles.Text = "Include correcly named files";
+            this.chkDisplayCorrectFiles.UseVisualStyleBackColor = true;
+            // 
+            // chkIncludePhotos
+            // 
+            this.chkIncludePhotos.AutoSize = true;
+            this.chkIncludePhotos.Location = new System.Drawing.Point(358, 78);
+            this.chkIncludePhotos.Name = "chkIncludePhotos";
+            this.chkIncludePhotos.Size = new System.Drawing.Size(15, 14);
+            this.chkIncludePhotos.TabIndex = 2;
+            this.chkIncludePhotos.UseVisualStyleBackColor = true;
+            this.chkIncludePhotos.CheckedChanged += new System.EventHandler(this.chkIncludePhotos_CheckedChanged);
+            // 
+            // chkIncludeVideo
+            // 
+            this.chkIncludeVideo.AutoSize = true;
+            this.chkIncludeVideo.Location = new System.Drawing.Point(750, 77);
+            this.chkIncludeVideo.Name = "chkIncludeVideo";
+            this.chkIncludeVideo.Size = new System.Drawing.Size(15, 14);
+            this.chkIncludeVideo.TabIndex = 19;
+            this.chkIncludeVideo.UseVisualStyleBackColor = true;
+            this.chkIncludeVideo.CheckedChanged += new System.EventHandler(this.chkIncludeVideo_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.chkIncludeVideo);
+            this.Controls.Add(this.chkIncludePhotos);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtVideoExtensions);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPhotoExtensions);
             this.Controls.Add(this.dataGridView1);
@@ -216,6 +273,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhotoExtensions;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtVideoExtensions;
+        private System.Windows.Forms.CheckBox chkDisplayCorrectFiles;
+        private System.Windows.Forms.CheckBox chkIncludePhotos;
+        private System.Windows.Forms.CheckBox chkIncludeVideo;
     }
 }
 

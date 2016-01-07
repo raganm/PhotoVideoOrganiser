@@ -33,7 +33,10 @@ namespace PhotoOrganiser
                 ? SearchOption.AllDirectories
                 : SearchOption.TopDirectoryOnly;
 
-
+            if (!Directory.Exists(sourceDirectory))
+            {
+                return new List<PhotoAnalysis>();
+            }
 
             var fileEntries = Directory.GetFiles(sourceDirectory, extension, searchOption);
 
