@@ -99,12 +99,12 @@ namespace PhotoOrganiser
             try
             {
                 var dateTaken = nameGenerator.GetDateTimeTaken(path);
-                fullPath = Path.Combine(_outputDirectory, dateTaken.Year.ToString(), dateTaken.ToString("yyyy MM MMMMM"));
+                fullPath = Path.Combine( _outputDirectory,"Photos", dateTaken.Year.ToString(), dateTaken.ToString("yyyy MM MMMMM"));
 
             }
             catch (Exception)
             {
-                fullPath = Path.Combine(_outputDirectory, "Missing Date Time");
+                fullPath = Path.Combine(_outputDirectory, "Photos","Missing Date Time");
             }
 
             return fullPath;

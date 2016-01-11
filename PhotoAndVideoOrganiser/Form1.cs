@@ -108,13 +108,14 @@ namespace PhotoAndVideoOrganiser
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            chkOrganiseSubDirectories.Checked = true;
             chkIncludePhotos.Checked = true;
             chkIncludeVideo.Checked = false;
             txtVideoExtensions.Enabled = false;
             txtSourceFolder.Text = @"C:\photos\problems";
             txtOrganisedFolder.Text = txtSourceFolder.Text + @"\output";
-            txtPhotoExtensions.Text = "*.jpg,*.jpeg";
-            txtVideoExtensions.Text = "*.mp4, *.avi, *.mpg";
+            txtPhotoExtensions.Text = @"*.jpg,*.jpeg,*.png";
+            txtVideoExtensions.Text = @"*.mp4, *.avi, *.mpg,*.mts";
 
             folderBrowserDialog1.SelectedPath = @"C:\photos\test";
         }
