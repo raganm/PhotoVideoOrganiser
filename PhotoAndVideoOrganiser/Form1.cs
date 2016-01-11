@@ -75,9 +75,9 @@ namespace PhotoAndVideoOrganiser
 
         private void OrganisePhotos(string sourceFolder, bool organiseSubDirectories, bool analyseOnly)
         {
-            var organiser = new Organiser(txtOrganisedFolder.Text);
+            var organiser = new PhotoOrganiser.Organiser(txtOrganisedFolder.Text);
 
-            var results = new List<PhotoAnalysis>();
+            var results = new List<Models.File>();
 
             foreach (var photoExtension in GetPhotoExtensions())
             {
@@ -87,14 +87,23 @@ namespace PhotoAndVideoOrganiser
             dataGridView1.DataSource = results;
         }
 
-        private void OrganiseVideos(string text, bool @checked, bool b)
+        private void OrganiseVideos(string sourceFolder, bool organiseSubDirectories, bool analyseOnly)
         {
-            //throw new NotImplementedException();
+            var organiser = new VideoOrganiser.Organiser(txtOrganisedFolder.Text);
+
+            var results = new List<Models.File>();
+
+            foreach (var extension in GetVideoExtensions())
+            {
+                results.AddRange(organiser.OrganiseDirectory(sourceFolder, organiseSubDirectories, analyseOnly, extension.Trim()));
+            }
+
+            dataGridView1.DataSource = results;
         }
 
         private void ClearResults()
         {
-            dataGridView1.DataSource = new List<PhotoAnalysis>();
+            dataGridView1.DataSource = new List<Models.File>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -105,7 +114,7 @@ namespace PhotoAndVideoOrganiser
             txtSourceFolder.Text = @"C:\photos\problems";
             txtOrganisedFolder.Text = txtSourceFolder.Text + @"\output";
             txtPhotoExtensions.Text = "*.jpg,*.jpeg";
-            txtVideoExtensions.Text = "*.mp4, *.avi";
+            txtVideoExtensions.Text = "*.mp4, *.avi, *.mpg";
 
             folderBrowserDialog1.SelectedPath = @"C:\photos\test";
         }
@@ -113,6 +122,12 @@ namespace PhotoAndVideoOrganiser
         private List<string> GetPhotoExtensions()
         {
             var extensions = txtPhotoExtensions.Text.Split(Convert.ToChar(",")).ToList();
+
+            return extensions;
+        }
+        private List<string> GetVideoExtensions()
+        {
+            var extensions = txtVideoExtensions.Text.Split(Convert.ToChar(",")).ToList();
 
             return extensions;
         }

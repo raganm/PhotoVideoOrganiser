@@ -24,3 +24,7 @@ C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganis
 C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Form1.resources
 C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.Properties.Resources.resources
 C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\obj\Debug\PhotoAndVideoOrganiser.csproj.GenerateResource.Cache
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\Models.dll
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\VideoOrganiser.dll
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\Models.pdb
+C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\VideoOrganiser.pdb

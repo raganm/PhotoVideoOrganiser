@@ -82,9 +82,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{c791ad17-61e6-4220-b208-d0818cc297ba}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PhotoOrganiser\PhotoOrganiser.csproj">
       <Project>{edea503e-3e2f-4292-bafd-7c39bdf08748}</Project>
       <Name>PhotoOrganiser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoOrganiser\VideoOrganiser.csproj">
+      <Project>{7419cee2-438b-4d49-b58e-2c8971deea1f}</Project>
+      <Name>VideoOrganiser</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

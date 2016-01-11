@@ -12,3 +12,5 @@ C:\dev\PhotoVideoOrganiser\PhotoOrganiser\bin\Debug\ExifLib.pdb
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser\obj\Debug\PhotoOrganiser.csprojResolveAssemblyReference.cache
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser\obj\Debug\PhotoOrganiser.dll
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser\obj\Debug\PhotoOrganiser.pdb
+C:\dev\PhotoVideoOrganiser\PhotoOrganiser\bin\Debug\Models.dll
+C:\dev\PhotoVideoOrganiser\PhotoOrganiser\bin\Debug\Models.pdb

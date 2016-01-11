@@ -1,6 +1,6 @@
-﻿namespace PhotoOrganiser
+﻿namespace Models
 {
-    public class PhotoAnalysis
+    public class File
     {
         public string OriginalName { get; set; }
 

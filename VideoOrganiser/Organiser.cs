@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
-using Models;
-using File = System.IO.File;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace PhotoOrganiser
+namespace VideoOrganiser
 {
     public class Organiser
     {
@@ -17,6 +17,7 @@ namespace PhotoOrganiser
             _outputDirectory = outputDirectory;
             _renamer = renamer;
         }
+
         public Organiser(string outputDirectory)
         {
             _outputDirectory = outputDirectory;
@@ -55,7 +56,7 @@ namespace PhotoOrganiser
                 }
                 else
                 {
-                    newName = _renamer.Rename(file,false);
+                    newName = _renamer.Rename(file, false);
 
                     FilePhoto(newName);
                 }
