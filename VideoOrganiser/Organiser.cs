@@ -31,7 +31,7 @@ namespace VideoOrganiser
             FilePhoto(renamedFile);
         }
 
-        public List<Models.File> OrganiseDirectory(string sourceDirectory, bool organiseSubDirectories, bool analyseOnly, string extension)
+        public List<Models.File> OrganiseDirectory(string sourceDirectory, bool organiseSubDirectories, bool renameFiles, bool organiseFiles, string extension)
         {
             var searchOption = organiseSubDirectories
                 ? SearchOption.AllDirectories
@@ -48,18 +48,18 @@ namespace VideoOrganiser
 
             foreach (var file in fileEntries)
             {
-                string newName;
+                var newName = _renamer.Rename(file, false);
 
-                if (analyseOnly)
+                if (renameFiles)
                 {
                     newName = _renamer.Rename(file, true);
                 }
-                else
-                {
-                    newName = _renamer.Rename(file, false);
 
+                if (organiseFiles)
+                {
                     FilePhoto(newName);
                 }
+                ;
 
                 var fi = new FileInfo(file);
                 var fi2 = new FileInfo(newName);

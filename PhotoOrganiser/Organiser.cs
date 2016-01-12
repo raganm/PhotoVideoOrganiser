@@ -30,7 +30,7 @@ namespace PhotoOrganiser
             FilePhoto(renamedFile);
         }
 
-        public List<Models.File> OrganiseDirectory(string sourceDirectory, bool organiseSubDirectories, bool analyseOnly, string extension)
+        public List<Models.File> OrganiseDirectory(string sourceDirectory, bool organiseSubDirectories, bool renameFiles, bool organiseFiles, string extension)
         {
             var searchOption = organiseSubDirectories
                 ? SearchOption.AllDirectories
@@ -47,16 +47,15 @@ namespace PhotoOrganiser
 
             foreach (var file in fileEntries)
             {
-                string newName;
+                var newName = _renamer.Rename(file, false);
 
-                if (analyseOnly)
+                if (renameFiles)
                 {
                     newName = _renamer.Rename(file, true);
                 }
-                else
-                {
-                    newName = _renamer.Rename(file,false);
 
+                if (organiseFiles)
+                {
                     FilePhoto(newName);
                 }
 

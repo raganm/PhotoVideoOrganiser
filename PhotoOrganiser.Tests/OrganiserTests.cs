@@ -55,7 +55,7 @@ namespace PhotoOrganiser.Tests
         {
             var workingCopyOfFiles = Path.Combine(TestContext.CurrentContext.TestDirectory, "TestFiles");
 
-            _organiser.OrganiseDirectory(workingCopyOfFiles, false, true,"*.jpg");
+            _organiser.OrganiseDirectory(workingCopyOfFiles, false,true,true,"*.jpg");
         }
 
         private void clearFolder(string FolderName)

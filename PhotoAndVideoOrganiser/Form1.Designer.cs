@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnOrganise = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.btnChooseSourceFolder = new System.Windows.Forms.Button();
             this.txtSourceFolder = new System.Windows.Forms.TextBox();
@@ -37,30 +36,22 @@
             this.txtOrganisedFolder = new System.Windows.Forms.TextBox();
             this.btnChooseOrganisedFolder = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.chkOrganiseFiles = new System.Windows.Forms.CheckBox();
+            this.chkRenameFiles = new System.Windows.Forms.CheckBox();
+            this.chkDisplayCorrectFiles = new System.Windows.Forms.CheckBox();
             this.chkOrganiseSubDirectories = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnAnalyse = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.txtPhotoExtensions = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtVideoExtensions = new System.Windows.Forms.TextBox();
-            this.chkDisplayCorrectFiles = new System.Windows.Forms.CheckBox();
             this.chkIncludePhotos = new System.Windows.Forms.CheckBox();
             this.chkIncludeVideo = new System.Windows.Forms.CheckBox();
+            this.btnGo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnOrganise
-            // 
-            this.btnOrganise.Location = new System.Drawing.Point(697, 192);
-            this.btnOrganise.Name = "btnOrganise";
-            this.btnOrganise.Size = new System.Drawing.Size(75, 23);
-            this.btnOrganise.TabIndex = 1;
-            this.btnOrganise.Text = "Organise";
-            this.btnOrganise.UseVisualStyleBackColor = true;
-            this.btnOrganise.Click += new System.EventHandler(this.btnOrganise_Click);
             // 
             // btnChooseSourceFolder
             // 
@@ -117,12 +108,46 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.chkOrganiseFiles);
+            this.panel1.Controls.Add(this.chkRenameFiles);
             this.panel1.Controls.Add(this.chkDisplayCorrectFiles);
             this.panel1.Controls.Add(this.chkOrganiseSubDirectories);
             this.panel1.Location = new System.Drawing.Point(123, 112);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(649, 49);
+            this.panel1.Size = new System.Drawing.Size(649, 74);
             this.panel1.TabIndex = 9;
+            // 
+            // chkOrganiseFiles
+            // 
+            this.chkOrganiseFiles.AutoSize = true;
+            this.chkOrganiseFiles.Enabled = false;
+            this.chkOrganiseFiles.Location = new System.Drawing.Point(261, 26);
+            this.chkOrganiseFiles.Name = "chkOrganiseFiles";
+            this.chkOrganiseFiles.Size = new System.Drawing.Size(89, 17);
+            this.chkOrganiseFiles.TabIndex = 3;
+            this.chkOrganiseFiles.Text = "OrganiseFiles";
+            this.chkOrganiseFiles.UseVisualStyleBackColor = true;
+            // 
+            // chkRenameFiles
+            // 
+            this.chkRenameFiles.AutoSize = true;
+            this.chkRenameFiles.Location = new System.Drawing.Point(261, 3);
+            this.chkRenameFiles.Name = "chkRenameFiles";
+            this.chkRenameFiles.Size = new System.Drawing.Size(87, 17);
+            this.chkRenameFiles.TabIndex = 2;
+            this.chkRenameFiles.Text = "RenameFiles";
+            this.chkRenameFiles.UseVisualStyleBackColor = true;
+            this.chkRenameFiles.CheckedChanged += new System.EventHandler(this.chkRenameFiles_CheckedChanged);
+            // 
+            // chkDisplayCorrectFiles
+            // 
+            this.chkDisplayCorrectFiles.AutoSize = true;
+            this.chkDisplayCorrectFiles.Location = new System.Drawing.Point(3, 26);
+            this.chkDisplayCorrectFiles.Name = "chkDisplayCorrectFiles";
+            this.chkDisplayCorrectFiles.Size = new System.Drawing.Size(157, 17);
+            this.chkDisplayCorrectFiles.TabIndex = 1;
+            this.chkDisplayCorrectFiles.Text = "Include correcly named files";
+            this.chkDisplayCorrectFiles.UseVisualStyleBackColor = true;
             // 
             // chkOrganiseSubDirectories
             // 
@@ -142,16 +167,6 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Options : ";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnAnalyse
-            // 
-            this.btnAnalyse.Location = new System.Drawing.Point(616, 192);
-            this.btnAnalyse.Name = "btnAnalyse";
-            this.btnAnalyse.Size = new System.Drawing.Size(75, 23);
-            this.btnAnalyse.TabIndex = 11;
-            this.btnAnalyse.Text = "Analyse";
-            this.btnAnalyse.UseVisualStyleBackColor = true;
-            this.btnAnalyse.Click += new System.EventHandler(this.btnAnalyse_Click);
             // 
             // dataGridView1
             // 
@@ -194,16 +209,6 @@
             this.txtVideoExtensions.Size = new System.Drawing.Size(229, 20);
             this.txtVideoExtensions.TabIndex = 17;
             // 
-            // chkDisplayCorrectFiles
-            // 
-            this.chkDisplayCorrectFiles.AutoSize = true;
-            this.chkDisplayCorrectFiles.Location = new System.Drawing.Point(3, 26);
-            this.chkDisplayCorrectFiles.Name = "chkDisplayCorrectFiles";
-            this.chkDisplayCorrectFiles.Size = new System.Drawing.Size(157, 17);
-            this.chkDisplayCorrectFiles.TabIndex = 1;
-            this.chkDisplayCorrectFiles.Text = "Include correcly named files";
-            this.chkDisplayCorrectFiles.UseVisualStyleBackColor = true;
-            // 
             // chkIncludePhotos
             // 
             this.chkIncludePhotos.AutoSize = true;
@@ -224,11 +229,22 @@
             this.chkIncludeVideo.UseVisualStyleBackColor = true;
             this.chkIncludeVideo.CheckedChanged += new System.EventHandler(this.chkIncludeVideo_CheckedChanged);
             // 
+            // btnGo
+            // 
+            this.btnGo.Location = new System.Drawing.Point(469, 192);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(75, 23);
+            this.btnGo.TabIndex = 20;
+            this.btnGo.Text = "GO";
+            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnGo);
             this.Controls.Add(this.chkIncludeVideo);
             this.Controls.Add(this.chkIncludePhotos);
             this.Controls.Add(this.label6);
@@ -236,7 +252,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPhotoExtensions);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnAnalyse);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
@@ -245,7 +260,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSourceFolder);
             this.Controls.Add(this.btnChooseSourceFolder);
-            this.Controls.Add(this.btnOrganise);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -258,7 +272,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnOrganise;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.Button btnChooseSourceFolder;
         private System.Windows.Forms.TextBox txtSourceFolder;
@@ -269,7 +282,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.CheckBox chkOrganiseSubDirectories;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnAnalyse;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtPhotoExtensions;
@@ -278,6 +290,9 @@
         private System.Windows.Forms.CheckBox chkDisplayCorrectFiles;
         private System.Windows.Forms.CheckBox chkIncludePhotos;
         private System.Windows.Forms.CheckBox chkIncludeVideo;
+        private System.Windows.Forms.CheckBox chkOrganiseFiles;
+        private System.Windows.Forms.CheckBox chkRenameFiles;
+        private System.Windows.Forms.Button btnGo;
     }
 }
 

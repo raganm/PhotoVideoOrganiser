@@ -36,44 +36,7 @@ namespace PhotoAndVideoOrganiser
             }
         }
 
-        private void btnAnalyse_Click(object sender, EventArgs e)
-        {
-            ClearResults();
-            btnAnalyse.Enabled = false;
-
-            if (chkIncludePhotos.Checked)
-            {
-                OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, true);
-            }
-
-            if (chkIncludeVideo.Checked)
-            {
-                OrganiseVideos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, true);
-            }
-
-            btnAnalyse.Enabled = true;
-
-        }
-
-        private void btnOrganise_Click(object sender, EventArgs e)
-        {
-            ClearResults();
-            btnOrganise.Enabled = false;
-
-            if (chkIncludePhotos.Checked)
-            {
-                OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, false);
-            }
-
-            if (chkIncludeVideo.Checked)
-            {
-                OrganiseVideos(txtSourceFolder.Text,chkOrganiseSubDirectories.Checked, false);
-            }
-
-            btnOrganise.Enabled = true;
-        }
-
-        private void OrganisePhotos(string sourceFolder, bool organiseSubDirectories, bool analyseOnly)
+        private void OrganisePhotos(string sourceFolder, bool organiseSubDirectories, bool renameFiles, bool organiseFiles)
         {
             var organiser = new PhotoOrganiser.Organiser(txtOrganisedFolder.Text);
 
@@ -81,13 +44,13 @@ namespace PhotoAndVideoOrganiser
 
             foreach (var photoExtension in GetPhotoExtensions())
             {
-                results.AddRange(organiser.OrganiseDirectory(sourceFolder, organiseSubDirectories, analyseOnly, photoExtension.Trim()));
+                results.AddRange(organiser.OrganiseDirectory(sourceFolder, organiseSubDirectories, renameFiles, organiseFiles, photoExtension.Trim()));
             }
 
             dataGridView1.DataSource = results;
         }
 
-        private void OrganiseVideos(string sourceFolder, bool organiseSubDirectories, bool analyseOnly)
+        private void OrganiseVideos(string sourceFolder, bool organiseSubDirectories, bool renameFiles, bool organiseFiles)
         {
             var organiser = new VideoOrganiser.Organiser(txtOrganisedFolder.Text);
 
@@ -95,7 +58,7 @@ namespace PhotoAndVideoOrganiser
 
             foreach (var extension in GetVideoExtensions())
             {
-                results.AddRange(organiser.OrganiseDirectory(sourceFolder, organiseSubDirectories, analyseOnly, extension.Trim()));
+                results.AddRange(organiser.OrganiseDirectory(sourceFolder, organiseSubDirectories, renameFiles, organiseFiles, extension.Trim()));
             }
 
             dataGridView1.DataSource = results;
@@ -108,11 +71,13 @@ namespace PhotoAndVideoOrganiser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            chkOrganiseSubDirectories.Checked = true;
+            chkOrganiseSubDirectories.Checked = false;
             chkIncludePhotos.Checked = true;
             chkIncludeVideo.Checked = false;
             txtVideoExtensions.Enabled = false;
-            txtSourceFolder.Text = @"C:\photos\problems";
+            //txtSourceFolder.Text = @"C:\photos\problems";
+            //txtSourceFolder.Text = @"C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\TestFiles";
+            txtSourceFolder.Text = @"C:\dev\PhotoVideoOrganiser\VideoOrganiser.Tests\TestFiles";
             txtOrganisedFolder.Text = txtSourceFolder.Text + @"\output";
             txtPhotoExtensions.Text = @"*.jpg,*.jpeg,*.png";
             txtVideoExtensions.Text = @"*.mp4, *.avi, *.mpg,*.mts";
@@ -146,6 +111,37 @@ namespace PhotoAndVideoOrganiser
         private void chkIncludeVideo_CheckedChanged(object sender, EventArgs e)
         {
             txtVideoExtensions.Enabled = chkIncludeVideo.Checked;
+        }
+
+        private void btnGo_Click(object sender, EventArgs e)
+        {
+            ClearResults();
+            btnGo.Enabled = false;
+
+            if (chkIncludePhotos.Checked)
+            {
+                OrganisePhotos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, chkRenameFiles.Checked, chkOrganiseFiles.Checked);
+            }
+
+            if (chkIncludeVideo.Checked)
+            {
+                OrganiseVideos(txtSourceFolder.Text, chkOrganiseSubDirectories.Checked, chkRenameFiles.Checked, chkOrganiseFiles.Checked);
+            }
+
+            btnGo.Enabled = true;
+        }
+
+        private void chkRenameFiles_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRenameFiles.Checked)
+            {
+                chkOrganiseFiles.Enabled = true;
+            }
+            else
+            {
+                chkOrganiseFiles.Checked = false;
+                chkOrganiseFiles.Enabled = false;
+            }
         }
     }
 }

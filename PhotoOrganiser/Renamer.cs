@@ -4,7 +4,7 @@ namespace PhotoOrganiser
 {
     public class Renamer
     {
-        public string Rename(string path, bool analyseOnly)
+        public string Rename(string path, bool performRenaming)
         {
             var nameGenerator = new NameGenerator();
             var fi = new FileInfo(path);
@@ -13,7 +13,7 @@ namespace PhotoOrganiser
 
             var destination = Path.Combine(fi.Directory.FullName, newName);
 
-            if (!analyseOnly)
+            if (performRenaming)
             {
                 if (!File.Exists(destination))
                 {
