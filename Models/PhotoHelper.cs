@@ -2,11 +2,26 @@
 using System.IO;
 using ExifLib;
 
-namespace PhotoOrganiser
+namespace Models
 {
-    public class NameGenerator
+    public class PhotoHelper : IGetNewNames
     {
-        public string GenerateNewName(string path)
+        private string _outputDirectory;
+
+        public string GetOrganisedFileName(string path, string outputDirectory)
+        {
+            _outputDirectory = outputDirectory;
+
+            var newName = GenerateNewName(path);
+
+            var destinationDirectory = GenerateDestinationDirectory(path);
+
+            var destination = Path.Combine(destinationDirectory, newName);
+
+            return destination;
+        }
+
+        private string GenerateNewName(string path)
         {
             var fi = new FileInfo(path);
 
@@ -24,15 +39,13 @@ namespace PhotoOrganiser
                     newName = string.Format("Unable to get date time information {2} - {0}{1}", size, fi.Extension, Guid.NewGuid().ToString());
                 }
 
-
-
                 return newName.ToLower();
             }
 
             return string.Empty;
         }
 
-        public DateTime GetDateTimeTaken(string path)
+        private DateTime GetDateTimeTaken(string path)
         {
             var date = new DateTime();
 
@@ -55,10 +68,25 @@ namespace PhotoOrganiser
                     date = datePictureTaken;
                 }
             }
-
-
-
+           
             return date;
+        }
+
+        private string GenerateDestinationDirectory(string path)
+        {
+            string fullPath;
+
+            try
+            {
+                var dateTaken = GetDateTimeTaken(path);
+                fullPath = Path.Combine(_outputDirectory, "Photos", dateTaken.Year.ToString(), dateTaken.ToString("yyyy MM MMMMM"));
+            }
+            catch (Exception)
+            {
+                fullPath = Path.Combine(_outputDirectory, "Photos", "Missing Date Time");
+            }
+
+            return fullPath;
         }
     }
 }

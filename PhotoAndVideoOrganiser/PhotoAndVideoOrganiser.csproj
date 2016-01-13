@@ -53,6 +53,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Organiser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -86,14 +87,64 @@
       <Project>{c791ad17-61e6-4220-b208-d0818cc297ba}</Project>
       <Name>Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PhotoOrganiser\PhotoOrganiser.csproj">
-      <Project>{edea503e-3e2f-4292-bafd-7c39bdf08748}</Project>
-      <Name>PhotoOrganiser</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\VideoOrganiser\VideoOrganiser.csproj">
-      <Project>{7419cee2-438b-4d49-b58e-2c8971deea1f}</Project>
-      <Name>VideoOrganiser</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TestFiles\Photo\Backup\testPicture.jpg" />
+    <Content Include="TestFiles\Photo\Backup\testPicture2.jpg" />
+    <Content Include="TestFiles\Photo\Backup\testPicture3.jpg" />
+    <Content Include="TestFiles\Photo\testPicture.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Photo\testPicture2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Photo\testPicture3.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\aaa.MPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\Backup\aaa.MPG" />
+    <Content Include="TestFiles\Video\Backup\bbb.MPG" />
+    <Content Include="TestFiles\Video\Backup\ccc.MPG" />
+    <Content Include="TestFiles\Video\Backup\ddd.MPG" />
+    <Content Include="TestFiles\Video\Backup\eee.mpg" />
+    <Content Include="TestFiles\Video\Backup\fff.mpg" />
+    <Content Include="TestFiles\Video\Backup\ggg.mpg" />
+    <Content Include="TestFiles\Video\Backup\hhh.MPG" />
+    <Content Include="TestFiles\Video\Backup\iii.AVI" />
+    <Content Include="TestFiles\Video\Backup\jjj.mp4" />
+    <Content Include="TestFiles\Video\Backup\kkk.MP4" />
+    <Content Include="TestFiles\Video\bbb.MPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\ccc.MPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\ddd.MPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\eee.mpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\fff.mpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\ggg.mpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\hhh.MPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\iii.AVI">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\jjj.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestFiles\Video\kkk.MP4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

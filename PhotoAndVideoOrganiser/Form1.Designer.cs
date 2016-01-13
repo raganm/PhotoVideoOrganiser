@@ -49,6 +49,7 @@
             this.chkIncludePhotos = new System.Windows.Forms.CheckBox();
             this.chkIncludeVideo = new System.Windows.Forms.CheckBox();
             this.btnGo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             // 
             this.txtSourceFolder.Location = new System.Drawing.Point(123, 9);
             this.txtSourceFolder.Name = "txtSourceFolder";
-            this.txtSourceFolder.Size = new System.Drawing.Size(481, 20);
+            this.txtSourceFolder.Size = new System.Drawing.Size(435, 20);
             this.txtSourceFolder.TabIndex = 4;
             this.txtSourceFolder.TextChanged += new System.EventHandler(this.txtSourceFolder_TextChanged);
             // 
@@ -121,17 +122,18 @@
             // 
             this.chkOrganiseFiles.AutoSize = true;
             this.chkOrganiseFiles.Enabled = false;
-            this.chkOrganiseFiles.Location = new System.Drawing.Point(261, 26);
+            this.chkOrganiseFiles.Location = new System.Drawing.Point(192, 26);
             this.chkOrganiseFiles.Name = "chkOrganiseFiles";
             this.chkOrganiseFiles.Size = new System.Drawing.Size(89, 17);
             this.chkOrganiseFiles.TabIndex = 3;
             this.chkOrganiseFiles.Text = "OrganiseFiles";
             this.chkOrganiseFiles.UseVisualStyleBackColor = true;
+            this.chkOrganiseFiles.CheckedChanged += new System.EventHandler(this.chkOrganiseFiles_CheckedChanged);
             // 
             // chkRenameFiles
             // 
             this.chkRenameFiles.AutoSize = true;
-            this.chkRenameFiles.Location = new System.Drawing.Point(261, 3);
+            this.chkRenameFiles.Location = new System.Drawing.Point(192, 3);
             this.chkRenameFiles.Name = "chkRenameFiles";
             this.chkRenameFiles.Size = new System.Drawing.Size(87, 17);
             this.chkRenameFiles.TabIndex = 2;
@@ -142,7 +144,7 @@
             // chkDisplayCorrectFiles
             // 
             this.chkDisplayCorrectFiles.AutoSize = true;
-            this.chkDisplayCorrectFiles.Location = new System.Drawing.Point(3, 26);
+            this.chkDisplayCorrectFiles.Location = new System.Drawing.Point(346, 3);
             this.chkDisplayCorrectFiles.Name = "chkDisplayCorrectFiles";
             this.chkDisplayCorrectFiles.Size = new System.Drawing.Size(157, 17);
             this.chkDisplayCorrectFiles.TabIndex = 1;
@@ -231,7 +233,7 @@
             // 
             // btnGo
             // 
-            this.btnGo.Location = new System.Drawing.Point(469, 192);
+            this.btnGo.Location = new System.Drawing.Point(697, 192);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(75, 23);
             this.btnGo.TabIndex = 20;
@@ -239,11 +241,22 @@
             this.btnGo.UseVisualStyleBackColor = true;
             this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(564, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 20);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "view";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.chkIncludeVideo);
             this.Controls.Add(this.chkIncludePhotos);
@@ -293,6 +306,7 @@
         private System.Windows.Forms.CheckBox chkOrganiseFiles;
         private System.Windows.Forms.CheckBox chkRenameFiles;
         private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -54,12 +54,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="TestFiles\RenameTest\aaa.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestFiles\RenameTest\bbb.jpg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="TestFiles\testPicture.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

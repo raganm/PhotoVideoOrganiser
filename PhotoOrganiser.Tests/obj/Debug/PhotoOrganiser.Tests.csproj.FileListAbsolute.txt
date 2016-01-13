@@ -17,8 +17,6 @@ C:\dev\PhotoAndVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\RenameTes
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\obj\Debug\PhotoOrganiser.Tests.csprojResolveAssemblyReference.cache
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\obj\Debug\PhotoOrganiser.Tests.dll
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\obj\Debug\PhotoOrganiser.Tests.pdb
-C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\RenameTest\aaa.jpg
-C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\RenameTest\bbb.jpg
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\testPicture.jpg
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\testPicture2.jpg
 C:\dev\PhotoVideoOrganiser\PhotoOrganiser.Tests\bin\Debug\TestFiles\testPicture3.jpg

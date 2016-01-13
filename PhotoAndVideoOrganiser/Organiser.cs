@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using Models;
 using File = System.IO.File;
 
-namespace PhotoOrganiser
+namespace PhotoAndVideoOrganiser
 {
     public class Organiser
     {
@@ -15,7 +14,7 @@ namespace PhotoOrganiser
             _outputDirectory = outputDirectory;
         }
 
-        public List<FileAnalysis> OrganiseDirectory(string sourceDirectory, Options options, string extension, IPhotoHelper helper)
+        public List<FileAnalysis> OrganiseDirectory(string sourceDirectory, Options options, string extension, IGetNewNames helper)
         {
             var searchOption = options.organiseSubDirectories
                 ? SearchOption.AllDirectories
@@ -62,6 +61,5 @@ namespace PhotoOrganiser
 
             return files;
         }
-        
     }
 }

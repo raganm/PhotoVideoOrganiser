@@ -4,19 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models;
+using File = System.IO.File;
 
 namespace VideoOrganiser
 {
     public class Organiser
     {
-        private readonly Renamer _renamer;
         private readonly string _outputDirectory;
-
-        public Organiser(string outputDirectory, Renamer renamer)
-        {
-            _outputDirectory = outputDirectory;
-            _renamer = renamer;
-        }
 
         public Organiser(string outputDirectory)
         {
@@ -24,52 +19,49 @@ namespace VideoOrganiser
             _renamer = new Renamer();
         }
 
-        public void OrganiseFile(string path)
+        public List<FileAnalysis> OrganiseDirectory(string sourceDirectory, Options options, string extension)
         {
-            var renamedFile = _renamer.Rename(path, false);
-
-            FilePhoto(renamedFile);
-        }
-
-        public List<Models.File> OrganiseDirectory(string sourceDirectory, bool organiseSubDirectories, bool renameFiles, bool organiseFiles, string extension)
-        {
-            var searchOption = organiseSubDirectories
+            var searchOption = options.organiseSubDirectories
                 ? SearchOption.AllDirectories
                 : SearchOption.TopDirectoryOnly;
 
             if (!Directory.Exists(sourceDirectory))
             {
-                return new List<Models.File>();
+                return new List<FileAnalysis>();
             }
 
             var fileEntries = Directory.GetFiles(sourceDirectory, extension, searchOption);
 
-            var files = new List<Models.File>();
+            var files = new List<FileAnalysis>();
 
-            foreach (var file in fileEntries)
+            foreach (var filePath in fileEntries)
             {
-                var newName = _renamer.Rename(file, false);
+                var file = new FileAnalysis(filePath, _outputDirectory);
 
-                if (renameFiles)
+                if (options.renameFiles)
                 {
-                    newName = _renamer.Rename(file, true);
+                    if (!file.DoesCorrectlyNamedFileExist)
+                    {
+                        File.Move(file.CurrentFullName, file.CorrectFullName);
+                    }
                 }
 
-                if (organiseFiles)
+                if (options.organiseFiles)
                 {
-                    FilePhoto(newName);
+                    if (!file.DoesOrganisedFileExist)
+                    {
+                        if (!file.DoesOrganisedDirectoryExist)
+                        {
+                            Directory.CreateDirectory(file.OrganisedDirectory);
+                        }
+
+                        var fileName = options.renameFiles ? file.CorrectFullName : file.CurrentFullName;
+
+                        File.Move(fileName, file.OrganisedFullName);
+                    }
                 }
-                ;
 
-                var fi = new FileInfo(file);
-                var fi2 = new FileInfo(newName);
-                var photoAnalysis = new Models.File
-                {
-                    OriginalName = fi.Name,
-                    NewName = fi2.Name
-                };
-
-                files.Add(photoAnalysis);
+                files.Add(file);
             }
 
             return files;
