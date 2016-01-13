@@ -103,6 +103,11 @@ namespace PhotoAndVideoOrganiser
             txtOrganisedFolder.Enabled = chkOrganiseFiles.Checked;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Process.Start(txtSourceFolder.Text);
+        }
+
         private void btnGo_Click(object sender, EventArgs e)
         {
             ClearResults();
@@ -138,9 +143,5 @@ namespace PhotoAndVideoOrganiser
             dataGridView1.DataSource = results;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Process.Start(txtSourceFolder.Text);
-        }
     }
 }
