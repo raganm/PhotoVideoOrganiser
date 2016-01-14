@@ -101,6 +101,9 @@
     <Content Include="TestFiles\Photo\testPicture3.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestFiles\Photo\testPicture4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestFiles\Video\aaa.MPG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

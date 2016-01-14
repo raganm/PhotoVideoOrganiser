@@ -16,12 +16,13 @@ namespace PhotoAndVideoOrganiser
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            chkOrganiseSubDirectories.Checked = false;
+            chkOrganiseSubDirectories.Checked = true;
             chkIncludePhotos.Checked = true;
             chkIncludeVideo.Checked = false;
             txtVideoExtensions.Enabled = false;
             txtSourceFolder.Text = @"C:\dev\PhotoVideoOrganiser\PhotoAndVideoOrganiser\bin\Debug\TestFiles";
             txtOrganisedFolder.Text = txtSourceFolder.Text + @"\output";
+            txtDuplicatesDirectory.Text = txtOrganisedFolder.Text + @"\duplicates";
             txtPhotoExtensions.Text = @"*.jpg,*.jpeg,*.png";
             txtVideoExtensions.Text = @"*.mp4, *.avi, *.mpg,*.mts";
 
@@ -33,7 +34,7 @@ namespace PhotoAndVideoOrganiser
 
         private void ClearResults()
         {
-            dataGridView1.DataSource = new List<Models.File>();
+            dataGridView1.DataSource = null;
         }
 
         private List<string> GetPhotoExtensions()
@@ -49,7 +50,7 @@ namespace PhotoAndVideoOrganiser
 
             return extensions;
         }
-        
+
         private void btnChooseSourceFolder_Click(object sender, EventArgs e)
         {
             var result = folderBrowserDialog1.ShowDialog();
@@ -67,6 +68,15 @@ namespace PhotoAndVideoOrganiser
             if (result == DialogResult.OK)
             {
                 txtOrganisedFolder.Text = folderBrowserDialog1.SelectedPath;
+            }
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var result = folderBrowserDialog1.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                txtDuplicatesDirectory.Text = folderBrowserDialog1.SelectedPath;
             }
         }
 
@@ -113,13 +123,14 @@ namespace PhotoAndVideoOrganiser
             ClearResults();
             btnGo.Enabled = false;
 
-            var organiser = new Organiser(txtOrganisedFolder.Text);
+            var organiser = new Organiser(txtOrganisedFolder.Text, txtDuplicatesDirectory.Text);
 
             var options = new Options()
             {
                 organiseSubDirectories = chkOrganiseSubDirectories.Checked,
                 renameFiles = chkRenameFiles.Checked,
-                organiseFiles = chkOrganiseFiles.Checked
+                organiseFiles = chkOrganiseFiles.Checked,
+                incorrectFilesOnly = chkIncorrectFilesOnly.Checked
             };
             var results = new List<FileAnalysis>();
 
@@ -140,8 +151,62 @@ namespace PhotoAndVideoOrganiser
             }
 
             btnGo.Enabled = true;
-            dataGridView1.DataSource = results;
+
+            DisplayResults(results, options);
+
         }
 
+        private void DisplayResults(List<FileAnalysis> results, Options options)
+        {
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.Columns.Clear();
+
+            dataGridView1.Columns.Add(
+                new DataGridViewTextBoxColumn
+                {
+                    DataPropertyName = "CurrentFileName",
+                    HeaderText = @"Current Name",
+                    Name = "CurrentFileName"
+                }
+            );
+
+            dataGridView1.Columns.Add(
+                    new DataGridViewTextBoxColumn
+                    {
+                        DataPropertyName = "CorrectFileName",
+                        HeaderText = @"Correct Name",
+                        Name = "CorrecttFileName"
+                    }
+                );
+
+            dataGridView1.Columns.Add(
+                    new DataGridViewTextBoxColumn
+                    {
+                        DataPropertyName = "DoesCorrectlyNamedFileExist",
+                        HeaderText = @"Does Correct File Exist",
+                        Name = "DoesCorrectlyNamedFileExist"
+                    }
+                );
+
+            if (options.renameFiles)
+            {
+
+            }
+
+            if (options.organiseFiles)
+            {
+
+            }
+
+            if (options.incorrectFilesOnly)
+            {
+                var moo = results.Where(x=>x.DoesCorrectlyNamedFileExist != true).ToList();
+                dataGridView1.DataSource = moo;
+            }
+            else
+            {
+                dataGridView1.DataSource = results;
+            }
+        }
     }
 }
